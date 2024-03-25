@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:lobby_shop/utils/theme/theme.dart';
 
 void main() {
@@ -8,6 +9,7 @@ void main() {
   //todo: Await Native Splash
   //todo: Init Firebase
   //todo : Initialize Authentication
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
   runApp(App());
 }
 
@@ -17,6 +19,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.system,
       theme: CustomAppTheme.lightTheme,
       darkTheme: CustomAppTheme.darkTheme,
