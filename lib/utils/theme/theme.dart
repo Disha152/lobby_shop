@@ -31,6 +31,7 @@ class CustomAppTheme {
     textTheme: CustomTextTheme.darkTextTheme,
     useMaterial3: true,
     primaryColor: Colors.blue,
+    backgroundColor: Colors.black,
     scaffoldBackgroundColor: Colors.black,
     brightness: Brightness.dark,
     elevatedButtonTheme: CustomElevatedButtonTheme.darkElevatedButtonTheme,

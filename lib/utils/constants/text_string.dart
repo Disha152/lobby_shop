@@ -12,6 +12,10 @@ class CustomTexts {
   static const String onBoardingSubtitle2 = "Choose the seemless transaction of your choice";
   static const String onBoardingSubtitle3 = "Door-to-Door Deliver at your door step";
 
+  //login
+  static const String loginTitle = "Welcome Back!";
+  static const String loginSubTitle = "Login to your account";
+
   //Home 
   static const String homeTitle = "Enjoy your Shopping!";
   static const String homeSubtitle = "Explore our wide range of products";

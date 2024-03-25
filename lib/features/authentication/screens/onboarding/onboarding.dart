@@ -7,7 +7,8 @@ import 'package:lobby_shop/utils/device/device_utility.dart';
 import 'package:lobby_shop/utils/helpers/helper_functions.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import '../../../utils/constants/colors.dart';
+import '../../../../utils/constants/colors.dart';
+import '../login/login.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});
@@ -78,7 +79,7 @@ class GoToHomescreenButton extends StatelessWidget {
         bottom: CustomDeviceUtils.getBottomNavigationHeight(),
         child: ElevatedButton(
           onPressed: () {
-            // Get.to(LoginScreen());
+            Get.to(const LoginScreen());
           },
           style: ElevatedButton.styleFrom(
               shape: const CircleBorder(), backgroundColor: Colors.blue[600]),
@@ -122,7 +123,7 @@ class SkipButton extends StatelessWidget {
       right: 20,
       child: TextButton(
           onPressed: () {
-            // Get.to(LoginScreen());
+            Get.to(const LoginScreen());
           },
           child: const Text('Skip')),
     );
