@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:lobby_shop/features/authentication/screens/onboarding.dart';
 import 'package:lobby_shop/utils/theme/theme.dart';
 
 void main() {
@@ -18,11 +20,12 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.system,
       theme: CustomAppTheme.lightTheme,
       darkTheme: CustomAppTheme.darkTheme,
+      home: OnBoardingScreen(),
     );
   }
 }
