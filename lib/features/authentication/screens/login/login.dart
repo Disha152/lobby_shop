@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:lobby_shop/utils/constants/image_strings.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/get_core.dart';
+import 'package:lobby_shop/features/authentication/screens/signUp/signUp.dart';
 import 'package:lobby_shop/utils/helpers/helper_functions.dart';
 import 'package:lobby_shop/utils/constants/sizes.dart';
 import 'package:lobby_shop/utils/constants/text_string.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     final dark = CustomHelperFunctions.isDarkMode(context);
@@ -39,7 +46,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: CustomSizes.sm),
                   Text(
-                    CustomTexts.loginSubTitle,
+                    CustomTexts.loginSubTitle + ' \u{1F389}',
                     style: TextStyle(
                         color: dark ? Colors.white : Colors.black,
                         fontSize: 16,
@@ -107,7 +114,9 @@ class LoginScreen extends StatelessWidget {
                       SizedBox(
                         width: double.infinity,
                         child: OutlinedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.to(const SignUpScreen());
+                          },
                           child: const Text('Create Account'),
                         ),
                       ),
@@ -142,16 +151,7 @@ class LoginScreen extends StatelessWidget {
                     width: 30,
                   ),
                   const SizedBox(width: CustomSizes.spaceBtwItems),
-                  // Container(
-                  //   // decoration: BoxDecoration(
-                  //   //   border: Border.all(color: Colors.grey),
-                  //   //   borderRadius: BorderRadius.circular(6),
-                  //   // ),
-                  //   width: 50,
-                  //   height: 50,
-                  //   child: ElevatedButton(
-                  //     onPressed: () {},
-                  //     child: Image.asset('assets/icons/facebook.png', height: 30, width: 30,)
+                 
                   // ),)
                   Image(
                     image: AssetImage('assets/logos/google.png'),

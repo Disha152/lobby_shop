@@ -20,5 +20,11 @@ class CustomTexts {
   static const String homeTitle = "Enjoy your Shopping!";
   static const String homeSubtitle = "Explore our wide range of products";
 
+  //SignUp
+  static const String signUpTitle = "Create an Account";
+  static const String signUpSubTitle = "To enjoy our services";
+
+  
+
 
 }
