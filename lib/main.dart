@@ -7,12 +7,12 @@ import 'package:lobby_shop/features/authentication/screens/forgotPassword/forgot
 import 'package:lobby_shop/features/authentication/screens/login/login.dart';
 import 'package:lobby_shop/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:lobby_shop/features/authentication/screens/signUp/signUp.dart';
+import 'package:lobby_shop/navigation_menu.dart';
 import 'package:lobby_shop/utils/theme/theme.dart';
 
 import 'features/authentication/screens/forgotPassword/forgotPasswordPage.dart';
 
 void main() {
-
   //todo: Add widgets Binding
   //todo: Init Local Storage
   //todo: Await Native Splash
@@ -25,7 +25,6 @@ void main() {
 class App extends StatelessWidget {
   const App({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -33,7 +32,7 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: CustomAppTheme.lightTheme,
       darkTheme: CustomAppTheme.darkTheme,
-      home:ForgotPassword(),
+      home: NavigationMenu(),
     );
   }
 }
