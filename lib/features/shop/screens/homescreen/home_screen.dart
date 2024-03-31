@@ -241,7 +241,7 @@ class HomeScreen extends StatelessWidget {
                     
                   },
                 ),
-                height: 1000,
+                height: 800,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
