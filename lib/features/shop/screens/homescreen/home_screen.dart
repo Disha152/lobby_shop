@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:lobby_shop/common/widgets/curved_edges.dart';
 import 'package:lobby_shop/utils/constants/colors.dart';
@@ -36,6 +37,12 @@ class HomeScreen extends StatelessWidget {
         image: 'https://img.icons8.com/?size=50&id=35700&format=png',
         title: 'Clothes',
         onTap: () {}),
+  ];
+
+  final List<CustomBanners> banners = [
+    CustomBanners(image: 'assets/images/banners/sneakers.png'),
+    CustomBanners(image: 'assets/images/banners/music.png'),
+    CustomBanners(image: 'assets/images/banners/hair.png'),
   ];
 
   @override
@@ -122,10 +129,53 @@ class HomeScreen extends StatelessWidget {
                 ],
               )
             ]),
+            CarouselSlider(
+              items: banners.map((banner) {
+                return Padding(
+                  padding: const EdgeInsets.only(
+                      left: 3, right: 3, top: 20, bottom: 20),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(
+                        10), // Adjust the radius as needed
+                    child: Image.asset(
+                      banner.image,
+                      fit: BoxFit
+                          .fill, // Use BoxFit.cover to fill the increased height
+                      height: 100,
+                      width: 350, // Set the desired height here
+                    ),
+                  ),
+                );
+              }).toList(),
+              options: CarouselOptions(
+                initialPage: 0,
+                enableInfiniteScroll: true,
+                // reverse: true,
+                autoPlay: true,
+                autoPlayAnimationDuration: Duration(milliseconds: 800),
+                autoPlayCurve: Curves.fastOutSlowIn,
+                enlargeCenterPage: true,
+                scrollDirection: Axis.horizontal,
+              ),
+            ),
+            SizedBox(
+              height: 30,
+            ),
           ],
         ),
       ),
     );
+  }
+}
+
+class CustomBanners extends StatelessWidget {
+  const CustomBanners({super.key, required this.image});
+
+  final String image;
+
+  @override
+  Widget build(BuildContext context) {
+    return Image.asset(image);
   }
 }
 
@@ -163,7 +213,9 @@ class CategoriesCard extends StatelessWidget {
                 child: Image(
                     image: NetworkImage(image),
                     fit: BoxFit.cover,
-                    color: CustomColors.dark),
+                    color: CustomHelperFunctions.isDarkMode(context)
+                        ? Colors.white
+                        : Colors.black),
               ),
             )),
         const SizedBox(height: CustomSizes.spaceBtwItems / 2),
@@ -200,7 +252,10 @@ class CustomSectionHeading extends StatelessWidget {
         children: [
           Text(
             'Popular Categories',
-            style: Theme.of(context).textTheme.titleMedium,
+            style: Theme.of(context)
+                .textTheme
+                .titleMedium!
+                .apply(color: Colors.white),
           ),
           Spacer(),
           Text(
@@ -229,12 +284,15 @@ class CustomSearchBar extends StatelessWidget {
       child: TextField(
         autocorrect: true,
         decoration: InputDecoration(
-          prefixIcon: Icon(Icons.search, color: Colors.grey[600]),
+          prefixIcon: Icon(Icons.search,
+              color: CustomHelperFunctions.isDarkMode(context)
+                  ? Colors.white
+                  : Colors.black),
           hintText: 'Search for products',
-          hintStyle: Theme.of(context)
-              .textTheme
-              .labelMedium!
-              .apply(color: Colors.grey[600]),
+          hintStyle: Theme.of(context).textTheme.labelMedium!.apply(
+              color: CustomHelperFunctions.isDarkMode(context)
+                  ? Colors.white
+                  : Colors.black),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(25.0),
           ),

@@ -43,6 +43,7 @@ dependencies:
   logger: ^2.2.0
   flutter_native_splash: ^2.3.11
   smooth_page_indicator: ^1.1.0
+  carousel_slider: ^4.2.1
 
 dev_dependencies:
   flutter_test:
@@ -70,6 +71,7 @@ flutter:
   assets:
     - assets/images/onboarding/
     - assets/images/verification/
+    - assets/images/banners/
     - assets/fonts/
     - assets/icons/brands/
     - assets/logos/
