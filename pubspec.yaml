@@ -72,6 +72,7 @@ flutter:
     - assets/images/onboarding/
     - assets/images/verification/
     - assets/images/banners/
+    - assets/images/items/
     - assets/fonts/
     - assets/icons/brands/
     - assets/logos/

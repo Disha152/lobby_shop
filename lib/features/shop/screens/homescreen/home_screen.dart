@@ -8,6 +8,7 @@ import 'package:lobby_shop/utils/device/device_utility.dart';
 import 'package:lobby_shop/utils/helpers/helper_functions.dart';
 
 import '../../../../common/widgets/circular_container.dart';
+import '../product/product_vertical_card.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -43,6 +44,69 @@ class HomeScreen extends StatelessWidget {
     CustomBanners(image: 'assets/images/banners/sneakers.png'),
     CustomBanners(image: 'assets/images/banners/music.png'),
     CustomBanners(image: 'assets/images/banners/hair.png'),
+  ];
+
+  final List<ProductCardVertical> vertical_cards = const [
+    ProductCardVertical(
+                      image: 'assets/images/items/shoe.png',
+                      name: 'Nike Air Max 270',
+                      brand_name: 'Nike',
+                      price: '₹5000',
+                    ),
+    ProductCardVertical(
+                      image: 'assets/images/items/watch.png',
+                      name: 'Nike Air Max 270',
+                      brand_name: 'Nike',
+                      price: '₹5000',
+                    ),
+    ProductCardVertical(
+                      image: 'assets/images/items/phone.png',
+                      name: 'Nike Air Max 270',
+                      brand_name: 'Nike',
+                      price: '₹5000',
+                    ),
+    ProductCardVertical(
+                      image: 'assets/images/items/clock.png',
+                      name: 'Nike Air Max 270',
+                      brand_name: 'Nike',
+                      price: '₹5000',
+                    ),
+    ProductCardVertical(
+                      image: 'assets/images/items/handbag.png',
+                      name: 'Nike Air Max 270',
+                      brand_name: 'Nike',
+                      price: '₹5000',
+                    ),
+    ProductCardVertical(
+                      image: 'assets/images/items/kurti.png',
+                      name: 'Nike Air Max 270',
+                      brand_name: 'Nike',
+                      price: '₹5000',
+                    ),
+    ProductCardVertical(
+                      image: 'assets/images/items/pants.png',
+                      name: 'Nike Air Max 270',
+                      brand_name: 'Nike',
+                      price: '₹5000',
+                    ),
+    ProductCardVertical(
+                      image: 'assets/images/items/socks.png',
+                      name: 'Nike Air Max 270',
+                      brand_name: 'Nike',
+                      price: '₹5000',
+                    ),
+    ProductCardVertical(
+                      image: 'assets/images/items/tiffin.png',
+                      name: 'Nike Air Max 270',
+                      brand_name: 'Nike',
+                      price: '₹5000',
+                    ),
+    ProductCardVertical(
+                      image: 'assets/images/items/tshirt.png',
+                      name: 'Nike Air Max 270',
+                      brand_name: 'Nike',
+                      price: '₹5000',
+                    ),
   ];
 
   @override
@@ -158,9 +222,31 @@ class HomeScreen extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
               ),
             ),
-            SizedBox(
-              height: 30,
-            ),
+           
+
+             Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Container(
+              // color:Colors.white,
+        
+                child: GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10,
+                  ),
+                  itemCount: 10, // Number of white containers
+                  itemBuilder: (context, index) {
+                    return vertical_cards[index];
+                    
+                  },
+                ),
+                height: 1000,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.transparent,
+                )))
           ],
         ),
       ),
